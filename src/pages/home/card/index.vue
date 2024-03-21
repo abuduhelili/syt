@@ -1,6 +1,5 @@
 <script setup lang="ts">
 // 接受父组件传过来的数据 hospitalInfo
-import { defineProps } from 'vue';
 defineProps(['hospitalInfo']);
 </script>
 
