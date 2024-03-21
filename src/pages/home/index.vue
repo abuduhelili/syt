@@ -9,10 +9,12 @@ import Card from './card/index.vue';
 
 import { getHospital } from '@/api/home/index';
 
+import type { HospitalResponseData, HospitalList } from '@/api/home/type';
+
 // 分页数据
 const pageNo = ref<number>(1);
 const pageSize = ref<number>(10);
-const hospitalArr = ref<any[]>([]);
+const hospitalArr = ref<HospitalList>([]);
 const total = ref<number>(0);
 
 // 页面加载时获取医院数据
@@ -21,7 +23,7 @@ onMounted(() => {
 });
 // 获取医院数据
 const getHospitalInfo = async () => {
-  const res: any = await getHospital(pageNo.value, pageSize.value);
+  const res: HospitalResponseData = await getHospital(pageNo.value, pageSize.value);
   if (res.code === 200) {
     hospitalArr.value = res.data.content;
     total.value = res.data.totalElements;
