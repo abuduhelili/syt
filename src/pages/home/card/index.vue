@@ -5,9 +5,9 @@ defineProps(['hospitalInfo']);
 
 <template>
   <el-card shadow="hover">
-    <div class="flex justify-between">
+    <div class="group flex justify-between">
       <div class="w-[70%] flex flex-col justify-center">
-        <h1 class="text-xl font-normal">{{ hospitalInfo.hosname }}</h1>
+        <h1 class="text-xl font-normal group-hover:font-semibold">{{ hospitalInfo.hosname }}</h1>
         <div class="flex justify-between mt-5 text-slate-500">
           <div class="flex items-center">
             <svg
