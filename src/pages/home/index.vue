@@ -33,7 +33,7 @@ const getHospitalInfo = async () => {
 };
 
 // 当前页码改变
-const curentChange = (val: number) => {
+const currentChange = (val: number) => {
   pageNo.value = val;
   getHospitalInfo();
 };
@@ -77,7 +77,7 @@ const sizeChange = (val: number) => {
             :background="true"
             layout="prev, pager, next, jumper,total,->,sizes"
             :total="total"
-            @current-change="curentChange"
+            @current-change="currentChange"
             @size-change="sizeChange" />
         </div>
       </el-col>
