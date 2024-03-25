@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 // 引入组件
-import Carousel from './carousel/index.vue';
-import Search from './search/index.vue';
-import Level from './level/index.vue';
-import Region from './region/index.vue';
-import Card from './card/index.vue';
+import Carousel from './HomeCarousel.vue';
+import Search from './HomeSearch.vue';
+import Level from './HomeLevel.vue';
+import Region from './HomeRegion.vue';
+import Card from './HomeCard.vue';
+import SideBar from './HomeSideBar.vue';
 
-import { getHospital } from '@/api/home/index';
-
-import type { HospitalResponseData, HospitalList } from '@/api/home/type';
+import { getHospital } from '@/api/home';
+import type { HospitalList, HospitalResponseData } from '@/api/home/type';
 
 // 分页数据
 const pageNo = ref<number>(1);
@@ -17,13 +17,21 @@ const pageSize = ref<number>(10);
 const hospitalArr = ref<HospitalList>([]);
 const total = ref<number>(0);
 
+const hostype = ref<string>('');
+const districtCode = ref<string>('');
+
 // 页面加载时获取医院数据
 onMounted(() => {
   getHospitalInfo();
 });
 // 获取医院数据
 const getHospitalInfo = async () => {
-  const res: HospitalResponseData = await getHospital(pageNo.value, pageSize.value);
+  const res: HospitalResponseData = await getHospital(
+    pageNo.value,
+    pageSize.value,
+    hostype.value,
+    districtCode.value
+  );
   if (res.code === 200) {
     hospitalArr.value = res.data.content;
     total.value = res.data.totalElements;
@@ -31,17 +39,29 @@ const getHospitalInfo = async () => {
     console.log('获取医院数据失败');
   }
 };
-
 // 当前页码改变
 const currentChange = (val: number) => {
   pageNo.value = val;
   getHospitalInfo();
 };
-
 // 每页条数改变
 const sizeChange = (val: number) => {
   pageSize.value = val;
   getHospitalInfo();
+};
+// 接受子组件传递的等级
+const getLevel = (level: string) => {
+  hostype.value = level;
+  // 重新获取医院数据
+  getHospitalInfo();
+  // console.log(level);
+};
+// 接受子组件传递的地区
+const getRegion = (region: string) => {
+  districtCode.value = region;
+  // 重新获取医院数据
+  getHospitalInfo();
+  // console.log(region);
 };
 </script>
 
@@ -56,16 +76,18 @@ const sizeChange = (val: number) => {
       <!-- 内容-左侧 -->
       <el-col :span="20">
         <!-- 等级-选项 -->
-        <Level />
+        <Level @getLevel="getLevel" />
         <!-- 地区-选项 -->
-        <Region />
+        <Region @getRegion="getRegion" />
         <!-- 医院卡片 -->
         <div class="my-[20px] flex justify-between flex-wrap">
           <Card
+            v-if="hospitalArr.length > 0"
             v-for="item in hospitalArr"
             :key="item.id"
             :hospitalInfo="item"
             class="w-[48%] mb-[30px]" />
+          <el-empty v-else description="暂无数据" class="w-[100%]" />
         </div>
         <!-- 底部-分页 -->
         <div class="mb-[20px]">
@@ -82,7 +104,9 @@ const sizeChange = (val: number) => {
         </div>
       </el-col>
       <!-- 内容-右侧 -->
-      <el-col :span="4"> 右 </el-col>
+      <el-col :span="4">
+        <SideBar />
+      </el-col>
     </el-row>
   </div>
 </template>
