@@ -111,21 +111,4 @@ const getRegion = (region: string) => {
   </div>
 </template>
 
-<style scoped>
-/* .home {
-  .hospital {
-    margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    .item {
-      width: 48%;
-      margin-bottom: 30px;
-    }
-  }
-  .pagination {
-    margin: 20px 0;
-  }
-} */
-</style>
+<style scoped></style>
