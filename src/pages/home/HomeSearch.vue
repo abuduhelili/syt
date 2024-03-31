@@ -24,10 +24,8 @@ const querySearch = async (keyword: string, cb: any) => {
 // 点击跳转
 const goDetail = (item: any) => {
   router.push({
-    path: '/hospital/booking',
-    query: {
-      hoscode: item.hoscode,
-    },
+    path: '/hospital/register',
+    query: { hoscode: item.hoscode },
   });
 };
 </script>

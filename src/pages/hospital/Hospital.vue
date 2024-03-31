@@ -12,7 +12,7 @@ console.log(route.path);
     <!-- 左侧-导航 -->
     <el-col :span="4">
       <el-menu :router="true" :default-active="route.path">
-        <el-menu-item index="/hospital/booking">
+        <el-menu-item index="/hospital/register">
           <el-icon><Menu /></el-icon><span>预约挂号</span>
         </el-menu-item>
 

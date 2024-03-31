@@ -13,8 +13,8 @@ const routes = [
     component: () => import('@/pages/hospital/Hospital.vue'),
     children: [
       {
-        path: 'booking',
-        component: () => import('@/pages/hospital/HospitalBooking.vue'),
+        path: 'register',
+        component: () => import('@/pages/hospital/HospitalRegister.vue'),
       },
       {
         path: 'detail',
