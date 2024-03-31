@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { Search } from '@element-plus/icons-vue';
-import { ref } from 'vue';
 import { reqHospitalInfoSearch } from '@/api/home';
 import type { HospitalInfoSearch } from '@/api/home/type.ts';
+import { Search } from '@element-plus/icons-vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 const router = useRouter();
 // 保存医院名字
@@ -24,7 +24,7 @@ const querySearch = async (keyword: string, cb: any) => {
 // 点击跳转
 const goDetail = (item: any) => {
   router.push({
-    path: '/hospital',
+    path: '/hospital/booking',
     query: {
       hoscode: item.hoscode,
     },

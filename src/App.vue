@@ -15,13 +15,13 @@
 
 <style scoped></style>
 
-<!-- 
+<!--
   主题色：
   #55a6fe
   #7f7f7f
 
   # 一、接口
-  
+
       服务器地址:http://syt.atguigu.cn
       医院接口：http://139.198.34.216:8201/swagger-ui.html
       公共数据接口：http://139.198.34.216:8202/swagger-ui.html

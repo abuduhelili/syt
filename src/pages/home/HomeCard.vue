@@ -5,7 +5,7 @@ const router = useRouter();
 const { hospitalInfo } = defineProps(['hospitalInfo']);
 // 点击跳转到医院详情页
 const goDetail = () => {
-  router.push(`/hospital`);
+  router.push(`/hospital/booking`);
 };
 </script>
 

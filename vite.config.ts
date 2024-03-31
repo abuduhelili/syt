@@ -1,10 +1,9 @@
-import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
 
 // 引入path模块
 import path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
   // 配置路径别名
