@@ -1,10 +1,16 @@
 <script lang="ts" setup>
 import { Bell, Close, Menu, Message, Operation } from '@element-plus/icons-vue';
 import { useRoute } from 'vue-router';
+import { onMounted } from 'vue';
+import { useHospitalDetail } from '@/store/modules/hospitalDetail';
 
+const hospitalDetailStore = useHospitalDetail();
 // 当前路由
 const route = useRoute();
-console.log(route.path);
+// 获取医院详情
+onMounted(() => {
+  hospitalDetailStore.getHospital(route.query.hoscode as string);
+});
 </script>
 
 <template>
@@ -21,7 +27,7 @@ console.log(route.path);
         </el-menu-item>
 
         <el-menu-item index="/hospital/notice">
-          <el-icon> <Bell /></el-icon><span>预约通知</span>
+          <el-icon><Bell /></el-icon><span>预约通知</span>
         </el-menu-item>
 
         <el-menu-item index="/hospital/information">
