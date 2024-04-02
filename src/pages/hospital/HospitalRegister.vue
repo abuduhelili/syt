@@ -1,9 +1,13 @@
+<script setup lang="ts">
+import { useHospitalDetail } from '@/store/modules/hospitalDetail';
+
+const hospitalDetail = useHospitalDetail();
+</script>
+
 <template>
   <div>
-    <h1>Booking</h1>
+    <p>{{ hospitalDetail.hospitalDate?.hospital }}</p>
   </div>
 </template>
 
-<script lang="ts" setup></script>
-
-<style lang="scss" scoped></style>
+<style scoped></style>
