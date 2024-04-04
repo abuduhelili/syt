@@ -9,13 +9,11 @@ export const useHospitalDetail = defineStore('hospitalDetail', () => {
   async function getHospital(hoscode: string) {
     const result: HospitalDetailResponse = await reqHospitalDetail(hoscode);
     if (result.code === 200) {
+      // console.log(result);
       hospitalDate.value = result.data;
-      console.log(hospitalDate.value);
+      // console.log(hospitalDate.value);
     }
   }
 
-  return {
-    hospitalDate,
-    getHospital,
-  };
+  return { hospitalDate, getHospital };
 });
