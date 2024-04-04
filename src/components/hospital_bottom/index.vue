@@ -1,8 +1,9 @@
 <template>
-  <div class="bottom">
-    <div class="content">
-      <div class="left">
-        <a href="#">京ICP备13027525号</a>
+  <div class="w-full h-[50px] bg-white">
+    <div
+      class="w-[1200px] h-full my-o mx-auto flex justify-between items-center text-[14px] text-gray-400">
+      <div>
+        <a href="#" class="text-inherit mr-2 hover:text-blue-400">京ICP备13027525号</a>
         <span>京卫网审字(2001)27号</span>
       </div>
       <div class="right">
@@ -17,42 +18,8 @@
 
 <script setup lang="ts"></script>
 
-<style scoped lang="scss">
-.bottom {
-  width: 100%;
-  height: 50px;
-  background: #f0f2f5;
-
-  .content {
-    width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    color: #555;
-
-    .left {
-      a {
-        color: inherit;
-        margin-right: 8px;
-        text-decoration: none;
-        &:hover {
-          color: #55a6fe;
-        }
-      }
-    }
-
-    .right {
-      span {
-        margin-left: 8px;
-        cursor: pointer;
-        &:hover {
-          color: #55a6fe;
-        }
-      }
-    }
-  }
+<style scoped>
+.right span {
+  @apply ml-2 cursor-pointer hover:text-blue-400;
 }
 </style>
