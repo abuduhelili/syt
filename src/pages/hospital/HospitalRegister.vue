@@ -8,8 +8,7 @@ const hospitalDetail = useHospitalDetail();
   <div>
     <!-- top -->
     <div class="my-4 flex items-center">
-      <h1 class="text-2xl font-bold mr-4">{{ hospitalDetail.hospitalDate?.hospital.hosname }}</h1>
-
+      <h1 class="text-xl font-bold mr-4">{{ hospitalDetail.hospitalDate?.hospital.hosname }}</h1>
       <svg
         t="1712144893087"
         class="icon"
@@ -25,7 +24,7 @@ const hospitalDetail = useHospitalDetail();
           fill="#707070"></path>
       </svg>
       <span class="ml-1 text-gray-500">
-        {{ hospitalDetail.hospitalDate?.hospital.hosname }}
+        {{ hospitalDetail.hospitalDate?.hospital.param.hostypeString }}
       </span>
     </div>
     <!-- 内容 -->
@@ -42,15 +41,15 @@ const hospitalDetail = useHospitalDetail();
         <!-- 挂号规则 -->
         <div>
           <div class="text-lg text-black">挂号规则</div>
-          <ol class="flex w-2/3 mt-1 justify-between text-gray-400">
+          <ol class="flex w-2/3 mt-1 justify-between text-gray-500">
             <li>预约周期：{{ hospitalDetail.hospitalDate?.bookingRule.cycle }}</li>
             <li>放号时间：{{ hospitalDetail.hospitalDate?.bookingRule.releaseTime }}</li>
             <li>停挂时间：{{ hospitalDetail.hospitalDate?.bookingRule.stopTime }}</li>
           </ol>
-          <div class="text-gray-500 mt-1">
-            退号时间：就诊前{{ hospitalDetail.hospitalDate?.bookingRule.quitDay }}个工作日，{{
-              hospitalDetail.hospitalDate?.bookingRule.quitTime
-            }}前取消
+          <div class="text-gray-500 mt-1" v-if="hospitalDetail.hospitalDate?.bookingRule.quitDay">
+            退号时间：就诊前
+            {{ Math.abs(hospitalDetail.hospitalDate?.bookingRule.quitDay) }}个工作日，
+            {{ hospitalDetail.hospitalDate?.bookingRule.quitTime }}前取消
           </div>
         </div>
         <!-- 预约规则 -->
@@ -66,7 +65,7 @@ const hospitalDetail = useHospitalDetail();
         </div>
       </div>
     </div>
-    <!--  -->
+    <!-- 医院科室内容 -->
   </div>
 </template>
 
