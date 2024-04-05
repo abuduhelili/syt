@@ -1,22 +1,22 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 // 引入路由
 import { useRouter } from 'vue-router';
+
 const router = useRouter();
 // 点击回到首页
 const goHome = () => {
   router.push('/home');
-  // console.log('点击了返回首页');
 };
 </script>
 <template>
   <div class="fixed z-[999] w-full h-[70px] bg-white">
     <div class="flex justify-between w-[1200px] h-[70px] mx-auto my-0 bg-white">
       <!-- 左侧 -->
-      <div @click="goHome" class="flex items-center">
+      <div class="flex items-center" @click="goHome">
         <img
-          src="../../assets/images/logo.png"
           alt="logo"
-          class="w-[50px] h-[50px] mr-3 cursor-pointer" />
+          class="w-[50px] h-[50px] mr-3 cursor-pointer"
+          src="../assets/images/logo.png" />
         <h1 class="text-[20px] text-blue-400 cursor-pointer">尚医通 预约挂号统一平台</h1>
       </div>
       <!-- 右侧 -->

@@ -1,15 +1,18 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+import HospitalTop from '@/components/HospitalTop.vue'
+import HospitalBottom from '@/components/HospitalBottom.vue'
+</script>
 
 <template>
   <div class="flex flex-col items-center">
     <!-- 顶部全局组件 -->
-    <HospitalTop />
+    <HospitalTop/>
     <!-- 路由组件 -->
     <div class="mt-[70px] w-[1200px] min-h-[700px]">
-      <router-view />
+      <router-view/>
     </div>
     <!-- 底部全局组件 -->
-    <HospitalBottom />
+    <HospitalBottom/>
   </div>
 </template>
 
