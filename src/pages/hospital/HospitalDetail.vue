@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import { useHospitalDetail } from '@/store/modules/hospitalDetail';
+<script lang="ts" setup>
+import { useHospitalDetail } from '@/store/hospitalDetail.ts';
 
 const hospitalDetail = useHospitalDetail();
 </script>
@@ -8,27 +8,27 @@ const hospitalDetail = useHospitalDetail();
   <div>
     <!-- top -->
     <div class="my-4 flex items-center">
-      <h1 class="text-xl font-bold mr-4">{{ hospitalDetail.hospitalDate?.hospital.hosname }}</h1>
+      <h1 class="text-xl font-bold mr-6">{{ hospitalDetail.hospitalDate?.hospital.hosname }}</h1>
       <svg
-        t="1712144893087"
         class="icon"
-        viewBox="0 0 1024 1024"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
+        height="16"
         p-id="5245"
+        t="1712144893087"
+        version="1.1"
+        viewBox="0 0 1024 1024"
         width="16"
-        height="16">
+        xmlns="http://www.w3.org/2000/svg">
         <path
           d="M257.13777778 257.13777778H111.50222222c-20.09770667 0-36.40888889 16.31118222-36.40888889 36.40888889v618.95111111c0 20.13411555 16.31118222 36.40888889 36.40888889 36.40888889h145.63555556c20.09770667 0 36.40888889-16.27477333 36.40888889-36.40888889V293.54666667c0-20.09770667-16.31118222-36.40888889-36.40888889-36.40888889zM584.81777778 475.59111111H439.18222222c-20.09770667 0-36.40888889 16.31118222-36.40888889 36.40888889v400.49777778c0 20.13411555 16.31118222 36.40888889 36.40888889 36.40888889h145.63555556c20.13411555 0 36.40888889-16.27477333 36.40888889-36.40888889V512c0-20.09770667-16.27477333-36.40888889-36.40888889-36.40888889zM912.49777778 75.09333333H766.86222222c-20.13411555 0-36.40888889 16.31118222-36.40888889 36.40888889v800.99555556c0 20.13411555 16.27477333 36.40888889 36.40888889 36.40888889h145.63555556c20.13411555 0 36.40888889-16.27477333 36.40888889-36.40888889V111.50222222c0-20.09770667-16.27477333-36.40888889-36.40888889-36.40888889z"
-          p-id="5246"
-          fill="#707070"></path>
+          fill="#707070"
+          p-id="5246"></path>
       </svg>
-      <span class="ml-1 text-gray-500">
+      <span class="text-gray-500">
         {{ hospitalDetail.hospitalDate?.hospital.param.hostypeString }}
       </span>
     </div>
     <!-- logo/路线 -->
-    <div class="flex mt-5 text-gray-500">
+    <div class="flex mt-10 text-gray-500">
       <!-- logo -->
       <div>
         <img
@@ -37,17 +37,17 @@ const hospitalDetail = useHospitalDetail();
           class="w-24 h-24 rounded-full" />
       </div>
       <!-- 路线 -->
-      <div class="ml-8 flex-1 text-[15px]">
-        <div class="flex items-center">
+      <div class="ml-10 flex-1 text-[15px]">
+        <div class="flex text-base items-center">
           <svg
-            t="1712245381704"
             class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
+            height="20"
             p-id="4529"
+            t="1712245381704"
+            version="1.1"
+            viewBox="0 0 1024 1024"
             width="20"
-            height="20">
+            xmlns="http://www.w3.org/2000/svg">
             <path
               d="M511.264243 208.447473c106.463754 0 193.121416 86.605473 193.121416 193.121416 0 51.557236-20.1182 100.072183-56.585763 136.487557L511.264243 674.592099 374.72859 538.056446c-36.46654-36.467563-56.58474-84.930321-56.58474-136.487557C318.14385 295.052946 404.800489 208.447473 511.264243 208.447473M511.264243 156.055219c-135.539976 0-245.51367 109.921505-245.51367 245.51367 0 67.798129 27.453259 129.152499 71.935356 173.578314l173.578314 173.530219 173.578314-173.582407c44.482097-44.429909 71.935356-105.780185 71.935356-173.578314C756.777913 265.924535 646.804219 156.055219 511.264243 156.055219L511.264243 156.055219 511.264243 156.055219zM511.264243 156.055219"
               fill="#272636"
