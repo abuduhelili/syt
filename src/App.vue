@@ -8,6 +8,7 @@ import HospitalBottom from '@/components/HospitalBottom.vue'
     <!-- 顶部全局组件 -->
     <HospitalTop/>
     <!-- 路由组件 -->
+
     <div class="mt-[70px] w-[1200px] min-h-[700px]">
       <router-view/>
     </div>

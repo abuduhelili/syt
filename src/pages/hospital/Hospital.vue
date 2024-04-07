@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import {Bell, Close, Menu, Message, Operation} from '@element-plus/icons-vue';
-import {useRoute, useRouter} from 'vue-router';
-import {onMounted} from 'vue';
-import {useHospitalDetail} from '@/store/hospitalDetail.ts';
+import { Bell, Close, Menu, Message, Operation } from '@element-plus/icons-vue';
+import { useRoute, useRouter } from 'vue-router';
+import { onMounted } from 'vue';
+import { useHospitalDetail } from '@/store/hospitalDetail.ts';
 
 const hospitalDetailStore = useHospitalDetail();
 // 当前路由
@@ -32,35 +32,35 @@ const handleSelect = (Index: string) => {
       <el-menu :router="true" default-active="route.path" @select="handleSelect">
         <el-menu-item index="/hospital/register">
           <el-icon>
-            <Menu/>
+            <Menu />
           </el-icon>
           <span>预约挂号</span>
         </el-menu-item>
 
         <el-menu-item index="/hospital/detail">
           <el-icon>
-            <Operation/>
+            <Operation />
           </el-icon>
           <span>医院详情</span>
         </el-menu-item>
 
         <el-menu-item index="/hospital/notice">
           <el-icon>
-            <Bell/>
+            <Bell />
           </el-icon>
           <span>预约通知</span>
         </el-menu-item>
 
         <el-menu-item index="/hospital/information">
           <el-icon>
-            <Message/>
+            <Message />
           </el-icon>
           <span>停诊信息</span>
         </el-menu-item>
 
         <el-menu-item index="/hospital/cancel">
           <el-icon>
-            <Close/>
+            <Close />
           </el-icon>
           <span>查询取消</span>
         </el-menu-item>
@@ -68,7 +68,7 @@ const handleSelect = (Index: string) => {
     </el-col>
     <!-- 路由展示 -->
     <el-col :span="20">
-      <router-view/>
+      <router-view />
     </el-col>
   </el-row>
 </template>

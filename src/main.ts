@@ -1,4 +1,4 @@
-import {createApp} from 'vue';
+import { createApp } from 'vue';
 import App from '@/App.vue';
 // 引入路由
 import router from '@/router/index';
@@ -15,7 +15,7 @@ import 'element-plus/dist/index.css';
 // @ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 // 创建pinia仓库
-import {createPinia} from 'pinia';
+import { createPinia } from 'pinia';
 
 const pinia = createPinia();
 // 创建应用实例
@@ -27,7 +27,7 @@ app.component('HospitalBottom', HospitalBottom);
 app.use(router);
 // 使用ElementPlus, 语言包
 app.use(ElementPlus);
-app.use(ElementPlus, {locale: zhCn});
+app.use(ElementPlus, { locale: zhCn });
 // 使用pinia仓库
 app.use(pinia);
 // 挂载应用实例
